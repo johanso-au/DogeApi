@@ -1,3 +1,5 @@
+// This script is called once a minute to populate the DB with the latest data.
+
 <?php
  
 ini_set('display_errors',1);
@@ -6,7 +8,7 @@ error_reporting(-1);
 
 require_once 'phprpccall.php';
  
-$dogecoin = new Dogecoin('secure', 'master', '192.168.1.117', '22555');
+$dogecoin = new Dogecoin('user', 'password', '192.168.1.1', '22555');
 // Dogecoin() is the function in 'phprpccall.php'
 
 $dogehash = round(($dogecoin->getnetworkhashps() / 1000000000), 2);
